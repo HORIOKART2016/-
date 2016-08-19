@@ -1,0 +1,30 @@
+ypspur の使いかた
+
+T-frogのＨＰからモータドライバの頁でwindows用デバイスドライバをダウンロード
+（TF-2MD3-Windriver）
+
+
+フォルダ内のTF-2MD3-Seriers.infを"C:\Windows\System32"にコピー
+
+setup.batを管理者として実行
+
+
+（ドライバーのインストール完了）
+
+
+Yp-spurをhttps://openspur.org/ypspur_downloads.phpからダウンロード
+解凍して適当な場所に配置(特にincludeとlibが重要：この２つをコピーして１つのフォルダypspurにまとめc直下をデフォ)
+
+以下はvisualstudioの各プロジェクトで設定
+
+プロジェクトのプロパティを開く
+構成プロパティ→　C/C++　→　追加のインクルードディレクトリにさっきのincludeフォルダを追加
+
+リンカー　→　全般　→　追加のライブラリディレクトリにさっきのlibフォルダを追加
+
+リンカー　→　入力　→　追加の依存ファイルに以下２つを追加（片方でもいいのかもしれないけどわからん）
+	libypspur_dll.lib　　， libypspur-md_dll.lib
+
+libフォルダにあるdllファイル２つを適切な場所にコピー（片方でもいいのかも･･･（ry　）
+
+これでvisualstudioのソリューションからYpspurが動かせるはず．
