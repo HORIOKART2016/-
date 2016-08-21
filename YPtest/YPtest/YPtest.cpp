@@ -7,13 +7,14 @@
 #include <math.h>
 #include <ypspur.h>
 
-#ifdef __WIN32
-#	include <windows.h>
-#endif
+#include <windows.h>
+
 
 #define TREAD 590
 #define PI 3.14159265359
 #define TIRE 290
+
+#define MODE 1
 
 int main(void){
 
@@ -46,52 +47,62 @@ int main(void){
 
 	Spur_set_pos_GL(0, 0, 0);
 
+	if (MODE == 1){
+		while (true){
+			key = getchar();
+			switch (key){
+			case ' ':	//スペースで停止
+				Spur_stop();
+				break;
+			case 0x48:  //↑で前進
+				YP_wheel_vel(vel, vel);
+				break;
+			case 0x50:	//↓で後退
+				YP_wheel_vel(-vel, -vel);
+				break;
+			case 0x4b:	//←で左回転
+				YP_wheel_ang(-TREAD*(ang / 360) / TIRE, TREAD*(ang / 360) / TIRE);
+				break;
+			case 0x4d: //→で右回転
+				YP_wheel_ang(TREAD*(ang / 360) / TIRE, -TREAD*(ang / 360) / TIRE);
+				break;
+			case 'v':	//速度変更
+				printf("\033[2J");
+				printf("速度変更\n");
+				scanf("%f", &vel);
+				break;
+			case 'a':	//回転角度変更
+				printf("\033[2J");
+				printf("回転角度変更\n");
+				scanf("%f", &ang);
+				break;
+			case 'o':	//原点リセット
+				Spur_set_pos_GL(0, 0, 0);
+				break;
+			}
 
-	while (true){
-		key = getchar();
-		switch (key){
-		case ' ':	//スペースで停止
-			Spur_stop();
-			break;
-		case 0x48:  //↑で前進
-			YP_wheel_vel(vel, vel);
-			break;
-		case 0x50:	//↓で後退
-			YP_wheel_vel(-vel, -vel);
-			break;
-		case 0x4b:	//←で左回転
-			YP_wheel_ang(-TREAD*(ang / 360) / TIRE, TREAD*(ang / 360) / TIRE);
-			break;
-		case 0x4d: //→で右回転
-			YP_wheel_ang(TREAD*(ang / 360) / TIRE, -TREAD*(ang / 360) / TIRE);
-			break;
-		case 'v':	//速度変更
+			Spur_get_pos_GL(&x, &y, &theta);
+
 			printf("\033[2J");
-			printf("速度変更\n");
-			scanf("%f", &vel);
-			break;
-		case 'a':	//回転角度変更
-			printf("\033[2J");
-			printf("回転角度変更\n");
-			scanf("%f", &ang);
-			break;
-		case 'o':	//原点リセット
-			Spur_set_pos_GL(0, 0, 0);
-			break;
+			printf("矢印キーで方向制御\n");
+			printf("スペースで停止\n");
+			printf("v:速度変更\n");
+			printf("a:回転角度変更\n");
+			printf("o:原点リセット\n\n\n");
+			printf("現在位置\n");
+			printf("%f,%f,%f\n", x, y, theta);
+
+
 		}
-
-		Spur_get_pos_GL(&x, &y, &theta);
-
-		printf("\033[2J");
-		printf("矢印キーで方向制御\n");
-		printf("スペースで停止\n");
-		printf("v:速度変更\n");
-		printf("a:回転角度変更\n");
-		printf("o:原点リセット\n\n\n");
-		printf("現在位置\n");
-		printf("%f,%f,%f\n", x, y, theta);
-
-
 	}
 
+	else {
+		while (true){
+			Spur_get_pos_GL(&x, &y, &theta);
+			printf("現在位置\n");
+			printf("%f,%f,%f\n", x, y, theta);
+			Sleep(1000);
+
+		}
+	}
 }
