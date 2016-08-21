@@ -68,7 +68,7 @@ int main(void){
 					Sleep(100);
 				Spur_stop();
 				break;
-			case 0x4d: //→で右回転
+			case 'j': //→で右回転
 				//YP_wheel_ang(TREAD*(ang / 360) / TIRE, -TREAD*(ang / 360) / TIRE);
 				Spur_spin_GL(-3.14 / 2);
 				while (!Spur_near_ang_GL(-ang*3.14 / 180, 0.1))
@@ -87,6 +87,9 @@ int main(void){
 				break;
 			case 'o':	//原点リセット
 				Spur_set_pos_GL(0, 0, 0);
+				break;
+			case 'f':
+				Spur_free();
 				break;
 			}
 
