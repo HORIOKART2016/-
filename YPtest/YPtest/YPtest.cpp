@@ -20,7 +20,7 @@ int main(void){
 
 	char key = 0x20;
 
-	double vel = 0.2;
+	double vel = 3.14;
 
 	double ang = 90;
 
@@ -42,8 +42,8 @@ int main(void){
 	Spur_set_angvel(1.5);	//角速度（rad/s)
 	Spur_set_angaccel(2.0);		//角加速度（rad/s/s)
 
-	YP_set_wheel_vel(PI / 2.0, PI / 2.0);
-	YP_set_wheel_accel(PI / 2.0,PI / 2.0);
+	YP_set_wheel_vel(PI, PI);
+	YP_set_wheel_accel(PI/2, PI/2);
 
 	Spur_set_pos_GL(0, 0, 0);
 
@@ -54,11 +54,12 @@ int main(void){
 			case ' ':	//スペースで停止
 				Spur_stop();
 				break;
-			case 'y':  //↑で前進
-				//YP_wheel_vel(vel, vel);
-				Spur_line_GL(0, 0, 0);
+			case 'y':  //↑で前進y
+
+				YP_wheel_vel(-3.1, 3.1);
+				//Spur_line_GL(0, 0, 0);
 				break;
-		/*	case 'j':	//↓で後退
+				/*	case 'j':	//↓で後退
 				YP_wheel_vel(-vel, -vel);
 				break;*/
 			case 'g':	//←で左回転
