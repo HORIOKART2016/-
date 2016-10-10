@@ -56,8 +56,8 @@ int main(void){
 				break;
 			case 'y':  //ª‚Å‘Oiy
 
-				YP_wheel_vel(-3.1, 3.1);
-				//Spur_line_GL(0, 0, 0);
+				//YP_wheel_vel(-3.1, 3.1);
+				Spur_line_GL(1.0, 0.0, 0.0);
 				break;
 				/*	case 'j':	//«‚ÅŒã‘Ş
 				YP_wheel_vel(-vel, -vel);
