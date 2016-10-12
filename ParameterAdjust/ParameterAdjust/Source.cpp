@@ -174,7 +174,56 @@ void Rotation_con(int rot){
 	printf("%lf,%lf,%lf\n", x, y, th);
 	printf("回転数：%lf\n", th / (2 * PI));
 
+
+
 }
+
+void kaihi(void){
+	double x, y, th;
+	double saki, kaihi, goal;
+	int sayuu;
+
+	printf("何ｍ先で回避するか：");
+	scanf("%lf", &saki);
+
+	printf("\n右:1 左:2　：");
+	scanf("%d", &sayuu);
+
+	printf("何ｍ横に回避するか");
+	scanf("%lf", &kaihi);
+
+	do{
+		printf("何ｍ先まで行くか(%lfm以上)", saki);
+		scanf("%lf", &goal);
+	} while (goal > saki);
+
+	Spur_set_pos_GL(0.0, 0.0, 0.0);
+
+	Spur_line_GL(goal, 0.0, 0.0);
+
+	while (Spur_over_line_GL(saki, 0.0, 0.0)){
+		RecordTorq();
+		Sleep(10);
+	}
+	if (sayuu == 1)
+		Spur_line_GL(goal, -kaihi, 0.0);
+	else if (sayuu==2)
+		Spur_line_GL(goal, kaihi, 0.0);
+
+	while (Spur_over_line_GL(goal, 0.0, 0.0)){
+		RecordTorq();
+		Sleep(10);
+	}
+
+	Spur_stop();
+
+	Spur_get_pos_GL(&x, &y, &th);
+	printf("Run end\n");
+	printf("%lf,%lf,%lf\n", x, y, th);
+
+
+}
+
 
 int main(void)
 {
@@ -189,7 +238,7 @@ int main(void)
 		return 1;
 	}
 
-	printf("1:直進\n2:回転\n\n");
+	printf("1:直進\n2:回転\n3:回避試験\n\n");
 	scanf("%d", &mode);
 
 	if (mode == 1){
@@ -206,6 +255,10 @@ int main(void)
 
 			Rotation_con(Rotation);
 		}
+
+	else if (mode == 3){
+		kaihi();
+	}
 	
 		
 	
