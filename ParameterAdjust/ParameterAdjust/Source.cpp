@@ -224,6 +224,28 @@ void kaihi(void){
 
 }
 
+void amagoi(void){
+	double x, y, th;
+	double r, l;
+	double ang_vel;
+	double count;
+	
+
+	Spur_set_pos_GL(0.0, 0.0, 0.0);
+	Spur_free();
+
+	while (1){
+
+		Spur_get_pos_GL(&x, &y, &th);
+		count = abs(th / (PI * 2));
+		printf("回転角：%lf   回転数：%lf 　回転方向：%d \n", th, count,Spur_near_ang_GL(0.0,0.1));
+		printf("位置： x: %lf    y:%lf   th:%lf\n\n  ", x, y, th);
+
+		Sleep(100);
+	}
+
+}
+
 
 int main(void)
 {
@@ -238,7 +260,7 @@ int main(void)
 		return 1;
 	}
 
-	printf("1:直進\n2:回転\n3:回避試験\n\n");
+	printf("1:直進\n2:回転\n3:回避試験\n4:回転の確認\n\n");
 	scanf("%d", &mode);
 
 	if (mode == 1){
@@ -258,6 +280,10 @@ int main(void)
 
 	else if (mode == 3){
 		kaihi();
+	}
+	else if (mode == 4){
+		amagoi();
+
 	}
 	
 		
