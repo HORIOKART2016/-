@@ -131,7 +131,7 @@ void run_straight(double length){
 	Spur_get_pos_GL(&x, &y, &th);
 	printf("Run end\n");
 	printf("%lf,%lf,%lf\n", x, y, th);
-
+	Sleep(20000);
 }
 
 
@@ -239,7 +239,7 @@ void amagoi(void){
 		Spur_get_pos_GL(&x, &y, &th);
 		count = abs(th / (PI * 2));
 		printf("回転角：%lf   回転数：%lf 　回転方向：%d \n", th, count,Spur_near_ang_GL(0.0,0.1));
-		printf("位置： x: %lf    y:%lf   th:%lf\n\n  ", x, y, th);
+		printf("位置： x: %lf    y:%lf   th:%lf(%lf[deg])\n\n  ", x, y, th,th*180/PI);
 
 		Sleep(100);
 	}
@@ -269,6 +269,7 @@ int main(void)
 		scanf("%lf", &length);
 
 		run_straight(length);
+		getchar();
 		}
 	else if (mode == 2){
 			int Rotation;
