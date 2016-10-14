@@ -45,7 +45,7 @@ int initSpur(void){
 	Spur_set_angaccel(180 * PI / 180);		//角加速度（rad/s/s)
 	*/
 
-	Spur_set_vel(0.3);		//速度0.3m/sec
+	Spur_set_vel(1.0);		//速度0.3m/sec
 	Spur_set_accel(1.0);	//加速度（m/s/s）
 	Spur_set_angvel(0.5);	//角速度（rad/s)
 	Spur_set_angaccel(2.0);		//角加速度（rad/s/s)
@@ -246,6 +246,47 @@ void amagoi(void){
 
 }
 
+void kaiten(void){
+	double x, y, th;
+	double saki, kaku, temae,sarani;
+
+	printf("最初に進む距離：");
+	scanf("%lf", &saki);
+	printf("回転角[deg]:");
+	scanf("%lf", &kaku);
+	printf("何ｍ手前で曲がり始めるか：");
+	scanf("%lf", &temae);
+	printf("さらに：");
+	scanf("%lf", &sarani);
+
+
+
+
+	Spur_set_pos_GL(0.0, 0.0, 0.0);
+
+	Spur_line_GL(saki, 0.0, 0.0);
+
+	while (!Spur_over_line_GL(saki, 0.0, 0.0)){
+		RecordTorq();
+		Sleep(10);
+	}
+	printf("まげる\n");
+	Spur_line_GL(cos(kaku * PI / 180)*sarani + saki, sin(kaku * PI / 180)*sarani, kaku* PI / 180);
+
+	while (!Spur_over_line_GL(cos(kaku * PI / 180)*sarani + saki, sin(kaku * PI / 180)*sarani, kaku * PI / 180)){
+		RecordTorq();
+		Sleep(10);
+	}
+
+	Spur_stop();
+
+	Spur_get_pos_GL(&x, &y, &th);
+	printf("Run end\n");
+	printf("%lf,%lf,%lf\n", x, y, th);
+
+
+}
+
 
 int main(void)
 {
@@ -260,7 +301,7 @@ int main(void)
 		return 1;
 	}
 
-	printf("1:直進\n2:回転\n3:回避試験\n4:回転の確認\n\n");
+	printf("1:直進\n2:回転\n3:回避試験\n4:回転の確認\n5：回転角\n\n");
 	scanf("%d", &mode);
 
 	if (mode == 1){
@@ -286,7 +327,10 @@ int main(void)
 		amagoi();
 
 	}
-	
+	else if (mode == 5){
+		kaiten();
+
+	}
 		
 	
 

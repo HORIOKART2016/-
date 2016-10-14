@@ -1,7 +1,8 @@
-﻿2016/10/13 16:11:30 にビルドを開始しました。
+﻿2016/10/14 22:14:58 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "C:\Users\user\Desktop\つくばチャレンジ2016\HRIOKART2016\ypspur-startup\ParameterAdjust\ParameterAdjust\ParameterAdjust.vcxproj" (Build ターゲット)。
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\ypspur\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+     1>cl : コマンド ライン warning D9028: 簡易リビルド時のエラーです、通常のビルドに戻します
          Source.cpp
      1>c:\ypspur\include\ypparam.h : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
      1>c:\users\user\desktop\つくばチャレンジ2016\hriokart2016\ypspur-startup\parameteradjust\parameteradjust\source.cpp(100): warning C4101: 'x_LC' : ローカル変数は 1 度も使われていません。
@@ -17,4 +18,4 @@
 
 ビルドに成功しました。
 
-経過時間 00:00:01.82
+経過時間 00:00:01.72
