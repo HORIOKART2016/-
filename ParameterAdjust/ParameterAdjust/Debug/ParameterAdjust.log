@@ -1,33 +1,21 @@
-﻿2016/10/18 16:06:17 にビルドを開始しました。
-     1>ノード 2 上のプロジェクト "C:\Users\user\Documents\tukuba-git\ypspur-startup\ParameterAdjust\ParameterAdjust\ParameterAdjust.vcxproj" (Build ターゲット)。
+﻿2016/10/14 22:14:58 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "C:\Users\user\Desktop\つくばチャレンジ2016\HRIOKART2016\ypspur-startup\ParameterAdjust\ParameterAdjust\ParameterAdjust.vcxproj" (Build ターゲット)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\ypspur\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CorrectTilt.cpp Source.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\ypspur\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+     1>cl : コマンド ライン warning D9028: 簡易リビルド時のエラーです、通常のビルドに戻します
          Source.cpp
      1>c:\ypspur\include\ypparam.h : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-     1>c:\users\user\documents\tukuba-git\ypspur-startup\parameteradjust\parameteradjust\source.cpp(102): warning C4101: 'x_LC' : ローカル変数は 1 度も使われていません。
-     1>c:\users\user\documents\tukuba-git\ypspur-startup\parameteradjust\parameteradjust\source.cpp(102): warning C4101: 'y_LC' : ローカル変数は 1 度も使われていません。
-     1>c:\users\user\documents\tukuba-git\ypspur-startup\parameteradjust\parameteradjust\source.cpp(102): warning C4101: 'th_LC' : ローカル変数は 1 度も使われていません。
-     1>c:\users\user\documents\tukuba-git\ypspur-startup\parameteradjust\parameteradjust\source.cpp(232): warning C4101: 'ang_vel' : ローカル変数は 1 度も使われていません。
-     1>c:\users\user\documents\tukuba-git\ypspur-startup\parameteradjust\parameteradjust\source.cpp(231): warning C4101: 'l' : ローカル変数は 1 度も使われていません。
-     1>c:\users\user\documents\tukuba-git\ypspur-startup\parameteradjust\parameteradjust\source.cpp(231): warning C4101: 'r' : ローカル変数は 1 度も使われていません。
-         CorrectTilt.cpp
-     1>c:\ypspur\include\ypparam.h : warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-     1>c:\users\user\documents\tukuba-git\ypspur-startup\parameteradjust\parameteradjust\correcttilt.cpp(66): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
-     1>c:\users\user\documents\tukuba-git\ypspur-startup\parameteradjust\parameteradjust\correcttilt.cpp(154): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
-     1>c:\users\user\documents\tukuba-git\ypspur-startup\parameteradjust\parameteradjust\correcttilt.cpp(155): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
-     1>c:\users\user\documents\tukuba-git\ypspur-startup\parameteradjust\parameteradjust\correcttilt.cpp(156): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
-     1>c:\users\user\documents\tukuba-git\ypspur-startup\parameteradjust\parameteradjust\correcttilt.cpp(108): warning C4101: 'ANG' : ローカル変数は 1 度も使われていません。
-     1>c:\users\user\documents\tukuba-git\ypspur-startup\parameteradjust\parameteradjust\correcttilt.cpp(108): warning C4101: 'DIS' : ローカル変数は 1 度も使われていません。
-     1>c:\users\user\documents\tukuba-git\ypspur-startup\parameteradjust\parameteradjust\correcttilt.cpp(113): warning C4101: 'droidOrientation' : ローカル変数は 1 度も使われていません。
-     1>c:\users\user\documents\tukuba-git\ypspur-startup\parameteradjust\parameteradjust\correcttilt.cpp(108): warning C4101: 'DR' : ローカル変数は 1 度も使われていません。
-     1>c:\users\user\documents\tukuba-git\ypspur-startup\parameteradjust\parameteradjust\correcttilt.cpp(108): warning C4101: 'DL' : ローカル変数は 1 度も使われていません。
-         コードを生成中...
+     1>c:\users\user\desktop\つくばチャレンジ2016\hriokart2016\ypspur-startup\parameteradjust\parameteradjust\source.cpp(100): warning C4101: 'x_LC' : ローカル変数は 1 度も使われていません。
+     1>c:\users\user\desktop\つくばチャレンジ2016\hriokart2016\ypspur-startup\parameteradjust\parameteradjust\source.cpp(100): warning C4101: 'y_LC' : ローカル変数は 1 度も使われていません。
+     1>c:\users\user\desktop\つくばチャレンジ2016\hriokart2016\ypspur-startup\parameteradjust\parameteradjust\source.cpp(100): warning C4101: 'th_LC' : ローカル変数は 1 度も使われていません。
+     1>c:\users\user\desktop\つくばチャレンジ2016\hriokart2016\ypspur-startup\parameteradjust\parameteradjust\source.cpp(230): warning C4101: 'ang_vel' : ローカル変数は 1 度も使われていません。
+     1>c:\users\user\desktop\つくばチャレンジ2016\hriokart2016\ypspur-startup\parameteradjust\parameteradjust\source.cpp(229): warning C4101: 'l' : ローカル変数は 1 度も使われていません。
+     1>c:\users\user\desktop\つくばチャレンジ2016\hriokart2016\ypspur-startup\parameteradjust\parameteradjust\source.cpp(229): warning C4101: 'r' : ローカル変数は 1 度も使われていません。
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\user\Documents\tukuba-git\ypspur-startup\ParameterAdjust\Debug\ParameterAdjust.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\ypspur\lib libypspur_dll.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\user\Documents\tukuba-git\ypspur-startup\ParameterAdjust\Debug\ParameterAdjust.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\user\Documents\tukuba-git\ypspur-startup\ParameterAdjust\Debug\ParameterAdjust.lib" /MACHINE:X86 Debug\CorrectTilt.obj
-         Debug\Source.obj
-         ParameterAdjust.vcxproj -> C:\Users\user\Documents\tukuba-git\ypspur-startup\ParameterAdjust\Debug\ParameterAdjust.exe
-     1>プロジェクト "C:\Users\user\Documents\tukuba-git\ypspur-startup\ParameterAdjust\ParameterAdjust\ParameterAdjust.vcxproj" (Build ターゲット) のビルドが完了しました。
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\user\Desktop\つくばチャレンジ2016\HRIOKART2016\ypspur-startup\ParameterAdjust\Debug\ParameterAdjust.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\ypspur\lib libypspur_dll.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\user\Desktop\つくばチャレンジ2016\HRIOKART2016\ypspur-startup\ParameterAdjust\Debug\ParameterAdjust.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\user\Desktop\つくばチャレンジ2016\HRIOKART2016\ypspur-startup\ParameterAdjust\Debug\ParameterAdjust.lib" /MACHINE:X86 Debug\Source.obj
+         ParameterAdjust.vcxproj -> C:\Users\user\Desktop\つくばチャレンジ2016\HRIOKART2016\ypspur-startup\ParameterAdjust\Debug\ParameterAdjust.exe
+     1>プロジェクト "C:\Users\user\Desktop\つくばチャレンジ2016\HRIOKART2016\ypspur-startup\ParameterAdjust\ParameterAdjust\ParameterAdjust.vcxproj" (Build ターゲット) のビルドが完了しました。
 
 ビルドに成功しました。
 
-経過時間 00:00:01.24
+経過時間 00:00:01.72
