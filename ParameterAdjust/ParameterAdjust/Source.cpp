@@ -26,6 +26,10 @@ LARGE_INTEGER start, now;
 double vel = 2.0;			//速度の指定[km/h]
 
 
+
+extern int init_Euler();
+extern int CorrectTilt();
+
 int initSpur(void){
 	// Windows環境で標準出力がバッファリングされないように設定
 	setvbuf(stdout, 0, _IONBF, 0);
@@ -287,6 +291,29 @@ void kaiten(void){
 
 }
 
+void CorrectTiltTest(){
+	
+	init_Euler();
+
+	int mode = 0;
+	double x, y, th;
+
+	printf("補正の有無　　0：無効　1：有効");
+	scanf("%d", &mode);
+
+	Spur_set_pos_GL(0.0, 0.0, 0.0);
+
+
+
+	while (1){
+		if (mode)
+			CorrectTilt();
+		Spur_get_pos_GL(&x, &y, &th);
+		std::cout << "Postion:  " << x << "  ,  " << y << "  ,  " << th << "   \n";
+	}
+
+}
+
 
 int main(void)
 {
@@ -332,7 +359,12 @@ int main(void)
 
 	}
 		
-	
+
+	else if (mode == 6){
+		CorrectTiltTest();
+	}
+
+
 
 
 	return 0;
