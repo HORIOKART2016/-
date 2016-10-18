@@ -25,6 +25,8 @@ LARGE_INTEGER start, now;
 #define TIRE_R 0.2900   //タイヤ径[m]
 double vel = 2.0;			//速度の指定[km/h]
 
+extern int init_Euler();
+extern int CorrectTilt();
 
 int initSpur(void){
 	// Windows環境で標準出力がバッファリングされないように設定
@@ -287,6 +289,27 @@ void kaiten(void){
 
 }
 
+void CorrectTiltTest(){
+
+	int mode=0;
+	double x, y, th;
+
+	printf("補正の有無　　0：無効　1：有効");
+	scanf("%d", &mode);
+
+	Spur_set_pos_GL(0.0, 0.0, 0.0);
+	
+
+
+	while (1){
+		if (mode)
+			CorrectTilt();
+		Spur_get_pos_GL(&x, &y, &th);
+		std::cout << "Postion:  " << x << "  ,  " << y << "  ,  " << th << "   \n";
+	}
+
+}
+
 
 int main(void)
 {
@@ -301,7 +324,7 @@ int main(void)
 		return 1;
 	}
 
-	printf("1:直進\n2:回転\n3:回避試験\n4:回転の確認\n5：回転角\n\n");
+	printf("1:直進\n2:回転\n3:回避試験\n4:回転の確認\n5：回転角\n6:傾斜補正テスト\n\n");
 	scanf("%d", &mode);
 
 	if (mode == 1){
@@ -330,6 +353,10 @@ int main(void)
 	else if (mode == 5){
 		kaiten();
 
+	}
+
+	else if (mode == 6){
+		CorrectTiltTest();
 	}
 		
 	
