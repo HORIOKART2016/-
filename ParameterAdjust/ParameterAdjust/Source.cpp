@@ -45,10 +45,10 @@ int initSpur(void){
 	Spur_set_angaccel(180 * PI / 180);		//角加速度（rad/s/s)
 	*/
 
-	Spur_set_vel(1.0);		//速度0.3m/sec
+	Spur_set_vel(0.3);		//速度0.3m/sec
 	Spur_set_accel(1.0);	//加速度（m/s/s）
 	Spur_set_angvel(0.5);	//角速度（rad/s)
-	Spur_set_angaccel(2.0);		//角加速度（rad/s/s)
+	Spur_set_angaccel(1.0);		//角加速度（rad/s/s)
 
 	YP_set_wheel_vel((1000 * MAX_VEL / 3600) / (TIRE_R / 2), (1000 * MAX_VEL / 3600) / (TIRE_R / 2));
 
